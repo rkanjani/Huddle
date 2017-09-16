@@ -1,6 +1,10 @@
 body {
-  padding: 50px;
   font-family: 'Lato', sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 a {
@@ -50,9 +54,13 @@ font-size: 20px;
 }
 
 .messages-log{
-    background-color: #efefef;
+    /*background-color: #efefef;*/
 }
 
+.huddle-header{
+  height:50px;
+  border-bottom: 1px solid #efefef;
+}
 
 
 .ui.grid > .row > .column{
