@@ -5,6 +5,23 @@
 .chat-log-header{
   text-align: center;
   height:50px;
+  border-bottom: 1px solid #efefef;
+}
+
+.setting.icon{
+  float: left;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 25px;
+}
+
+.plus.icon{
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 25px;
 }
 
 .chat-log-header-paragraph{
