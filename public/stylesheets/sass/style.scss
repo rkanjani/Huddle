@@ -1,0 +1,200 @@
+html, body{
+  margin:0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.main-content-row.row{
+  padding-bottom: 0 !important;
+  padding-top: 0 !important
+}
+
+.ui.grid{
+  height:100%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.chat-log-header{
+  text-align: center;
+  height:50px;
+  border-bottom: 1px solid #efefef;
+}
+
+.settings.icon{
+  float: left;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 20px;
+}
+
+.plus.icon{
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+font-size: 20px;
+}
+
+.chat-log-header-paragraph{
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.chat-log{
+  background-color: #fff;
+  border-right-color: #efefef;
+  border-right-style: solid;
+  border-right-width:1px;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.chat-log-content{
+  flex-grow: 1;
+}
+
+.messages-log{
+  display: flex !important;
+  flex-direction: column;
+}
+
+.huddle-header{
+  height:50px;
+  border-bottom: 1px solid #efefef;
+}
+
+.huddle-content{
+  flex-grow: 1;
+}
+
+.huddle-message{
+  height: 40px;
+    align-self: flex-end;
+    width: 100%;
+    margin-top: auto;
+      border-top: 1px solid #efefef;
+}
+
+.messages-log > .ui.input > input{
+  border-radius: 0;
+  border: 0;
+}
+
+.comment{
+  border-radius:25px;
+  padding-left: 15px !important;
+}
+
+.ui.comments{
+  max-width:100% !important;
+}
+
+.ui.comments .comment .comment-content .content .text{
+  display: inline-block;
+  background-color: #0084ff !important;
+  color: #fff !important;
+  padding: 15px;
+  font-size: 13px;
+  border-radius: 22px;
+  margin: 10px 10px 10px 0px;
+  line-height: 1.2rem;
+  max-width:60%;
+}
+
+.ui.comments .comment .metadata{
+  margin-left:0.5em;
+  margin-right:0.5em;
+}
+
+.comment.me .comment-content .content{
+    justify-content: end;
+    align-items: end;
+    text-align: end;
+}
+
+.comment.me .comment-content .text{
+    text-align: left;
+    margin: 10px 0px 10px 10px !important;
+}
+
+.comment.me {
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+  margin-right: 15px !important;
+  padding-right: 15px !important;
+}
+
+
+
+
+.ui.comments .comment .avatar{
+  height:2.5em !important;
+}
+
+.ui.comments .comment:first-child{
+  padding-top:0.5em !important;
+}
+
+.ui.comments .comment{
+  padding-bottom:0.25em !important;
+}
+
+.avatar{
+  background-color: #80f1b3;
+  border-radius: 116px;
+}
+
+.ui.button.send{
+  background: #fff;
+  font-size: 1.2em;
+  position: absolute;
+  right: 25px;
+  margin-right: -12px;
+  top: 0;
+}
+
+.ui.button.send:hover{
+  background-color: #0084ff;
+  color:#fff;
+  transition: background-color 200ms linear;
+}
+
+.led-green {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
+
+.numUsers{
+  padding-right:10px;
+}
+
+.ui.grid > .row > .column.messages-log{
+  padding-left:0 !important;
+}
+
+.ui.grid > .row > .column{
+  padding-left:1rem !important;
+  padding-right:0 !important;
+  margin-right: 0 !important;
+margin-left: 0 !important;
+}
