@@ -1,3 +1,5 @@
+var uid;
+
 firebase.auth().signInAnonymously().catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -11,7 +13,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     console.log(user)
     var isAnonymous = user.isAnonymous;
-    var uid = user.uid;
+    uid = user.uid;
     // Save the user
     navigator.geolocation.getCurrentPosition(function(position) {
       writeUserData(uid, position.coords.latitude, position.coords.longitude)
@@ -22,6 +24,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function writeUserData(userId, lat, lon) {
+  console.log(userId)
   firebase.database().ref('users/' + userId).set({
     lat: lat,
     lon: lon
