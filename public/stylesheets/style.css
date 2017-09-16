@@ -1,3 +1,7 @@
+html, body{
+  margin:0;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   position: absolute;
@@ -11,8 +15,15 @@ a {
   color: #00B7FF;
 }
 
+.main-content-row.row{
+  padding-bottom: 0 !important;
+  padding-top: 0 !important
+}
+
 .ui.grid{
   height:100%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .chat-log-header{
@@ -54,7 +65,8 @@ font-size: 20px;
 }
 
 .messages-log{
-    /*background-color: #efefef;*/
+  display: flex !important;
+  flex-direction: column;
 }
 
 .huddle-header{
@@ -62,6 +74,22 @@ font-size: 20px;
   border-bottom: 1px solid #efefef;
 }
 
+.huddle-content{
+  flex-grow: 1;
+}
+
+.huddle-message{
+  height: 40px;
+    align-self: flex-end;
+    width: 100%;
+    margin-top: auto;
+      border-top: 1px solid #efefef;
+}
+
+.messages-log > .ui.input > input{
+  border-radius: 0;
+  border: 0;
+}
 
 .ui.grid > .row > .column{
   padding-left:0 !important;
