@@ -1,5 +1,8 @@
-const COLOR_PALETTE = ["#e68181", "#80f1b3", "#2fae95", "#f5da77", "#e69eb9"];
+var huddleApp = angular.module('huddleApp', []);
 
+function mainController($scope, $http){
+
+}
 getLocation().then(function(location){
   console.log("You're located at " + location.longitude + " and  " + location.latitude);
 
@@ -30,9 +33,4 @@ function getLocation(){
       reject(err)
     });
   })
-}
-
-function getColorForIcon(){
-  var random_color = COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
-  document.getElementById('title').style.color = random_color;
 }

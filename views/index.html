@@ -1,0 +1,207 @@
+<html ng-app="huddleApp">
+  <head>
+    <title>Huddle.</title>
+
+    <link rel='stylesheet' href='stylesheets/css/style.css' />
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB1Fvs-hHHZtN3JVU3iG7lL9JaU5vR180o",
+        authDomain: "huddle-685b2.firebaseapp.com",
+        databaseURL: "https://huddle-685b2.firebaseio.com",
+        projectId: "huddle-685b2",
+        storageBucket: "huddle-685b2.appspot.com",
+        messagingSenderId: "66066916355"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+
+      console.log(firebase.app().name);  // "[DEFAULT]"
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-messaging.js"></script>
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body ng-controller="mainController">
+
+    <div class="ui grid">
+      <div class="row main-content-row">
+        <div id="chats" class="four wide column chat-log">
+          <div class="row chat-log-header">
+            <i class="settings icon"></i>
+            <p class="chat-log-header-paragraph"><span>huddle.<span></p>
+            <i class="plus square outline icon"></i>
+          </div>
+
+          <div class="row chat-log-content">
+
+            <div class="ui relaxed items">
+              <div class="item huddle">
+                <div class="ui tiny image">
+                  <div class="led-green"></div>
+                </div>
+                <div class="middle aligned content">
+                  <a class="header">Cosmopolitan Park</a>
+                  <div class="huddle-context">
+                    <span>
+                      <p>
+                        <span class="numUsers"><i class="user icon"></i> 12</span>
+                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item huddle">
+                <div class="ui tiny image">
+                  <div class="led-green"></div>
+                </div>
+                <div class="middle aligned content">
+                  <a class="header">Cosmopolitan Park</a>
+                  <div class="huddle-context">
+                    <span>
+                      <p>
+                        <span class="numUsers"><i class="user icon"></i> 12</span>
+                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item huddle">
+                <div class="ui tiny image">
+                  <div class="led-green"></div>
+                </div>
+                <div class="middle aligned content">
+                  <a class="header">Cosmopolitan Park</a>
+                  <div class="huddle-context">
+                    <span>
+                      <p>
+                        <span class="numUsers"><i class="user icon"></i> 12</span>
+                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item huddle">
+                <div class="ui tiny image">
+                  <div class="led-green"></div>
+                </div>
+                <div class="middle aligned content">
+                  <a class="header">Cosmopolitan Park</a>
+                  <div class="huddle-context">
+                    <span>
+                      <p>
+                        <span class="numUsers"><i class="user icon"></i> 12</span>
+                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+        <div id="messages" class="twelve wide column messages-log">
+          <div class="row huddle-header">
+            <p class="huddle-header-paragraph">Cosmopolitan Park</p>
+          </div>
+
+          <div class="row huddle-content ui comments">
+
+              <!-- Example message in chat  -->
+              <!-- TODO: Make dynamic according to firebase  -->
+                <div class="comment">
+                  <div class="comment-content">
+                    <!-- <div class="avatar">
+                      <span class="message-color"></span>
+                    </div> -->
+                    <div class="content">
+                      <div class="info">
+                        <a class="author">Matt</a>
+                        <div class="metadata">
+                          <span class="date">Today at 5:42PM</span>
+                        </div>
+                      </div>
+                      <div class="text">
+                        Hello world!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--END OF MESSAGE  -->
+
+                <div class="comment me">
+                  <div class="comment-content">
+                    <!-- <div class="avatar">
+                      <span class="message-color"></span>
+                    </div> -->
+                    <div class="content">
+                      <div class="info">
+                        <div class="metadata">
+                          <span class="date">Today at 5:42PM</span>
+                        </div>
+                        <a class="author">Rohan</a>
+                      </div>
+                      <div class="text">
+                        Why hello there!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="comment">
+                  <div class="comment-content">
+                    <!-- <div class="avatar">
+                      <span class="message-color"></span>
+                    </div> -->
+                    <div class="content">
+                      <div class="info">
+                        <a class="author">Matt</a>
+                        <div class="metadata">
+                          <span class="date">Today at 5:42PM</span>
+                        </div>
+                      </div>
+                      <div class="text">
+                        Wow this is actually working, great!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+          </div>
+
+          <div class="row huddle-message ui input">
+            <input type="text" placeholder="Write message to huddle...">
+
+            <button class="ui button send"><span><i class="send outline icon"></i></span></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -147,15 +147,28 @@ a {
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-color: #ABFF00;
+  background-color: #aeff70;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px; }
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 1px 12px; }
 
 .numUsers {
   padding-right: 10px; }
 
+.huddle-header {
+  text-align: center; }
+
+.huddle-header-paragraph {
+  line-height: 50px;
+  width: 100%;
+  font-size: 1.3rem; }
+
 .ui.grid > .row > .column.messages-log {
   padding-left: 0 !important; }
+
+.ui.relaxed.items > .item {
+  margin: 0.5em 0 0.5em 0 !important;
+  padding: 1.0em 0 1em 0;
+  border-bottom: 1px #efefef solid; }
 
 .ui.grid > .row > .column {
   padding-left: 1rem !important;
