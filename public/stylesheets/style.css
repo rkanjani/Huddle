@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -22,15 +22,15 @@ a {
   position: absolute;
   top: 15px;
   left: 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .plus.icon{
   float: right;
   position: absolute;
   top: 15px;
-  right: 20px;
-  font-size: 25px;
+  right: 10px;
+font-size: 20px;
 }
 
 .chat-log-header-paragraph{

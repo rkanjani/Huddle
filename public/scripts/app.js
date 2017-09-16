@@ -1,5 +1,8 @@
-getLocation.then(function(location){
-  alert("You're located at ${location.longitude} and ${position.latitude}");
+getLocation().then(function(location){
+  console.log("You're located at " + location.longitude + " and  " + location.latitude);
+
+  $.post("/locationRecieved", {location: location});
+
 
   //Check firebase for existing huddles
 
@@ -10,14 +13,9 @@ getLocation.then(function(location){
 
 }).catch(function(err){
   alert("Please enable your location services on your browser");
-})
+});
 
-
-createHuddle(location){
-  
-}
-
-getLocation(){
+function getLocation(){
   return new Promise(function(resolve, reject){
     navigator.geolocation.getCurrentPosition(function(position) {
       const location = {
