@@ -1,0 +1,35 @@
+.ui.grid{
+  height:100%;
+}
+
+.chat-log-header{
+  text-align: center;
+  height:50px;
+}
+
+.chat-log-header-paragraph{
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.chat-log{
+  background-color: #fff;
+  border-right-color: #efefef;
+  border-right-style: solid;
+  border-right-width:1px;
+
+}
+
+.messages-log{
+    background-color: #efefef;
+}
+
+
+
+.ui.grid > .row > .column{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
