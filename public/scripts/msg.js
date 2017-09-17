@@ -10,16 +10,15 @@ messaging.requestPermission()
   console.log('Unable to get permission to notify.', err);
 })
 .then(function(currentToken) {
-  console.log(currentToken)
   if (currentToken) {
     // sendTokenToServer(currentToken);
-    updateUIForPushEnabled(currentToken);
+    // updateUIForPushEnabled(currentToken);
   } else {
     // Show permission request.
     console.log('No Instance ID token available. Request permission to generate one.');
     // Show permission UI.
-    updateUIForPushPermissionRequired();
-    setTokenSentToServer(false);
+    // updateUIForPushPermissionRequired();
+    // setTokenSentToServer(false);
   }
 })
 .catch(function(err) {
@@ -31,22 +30,6 @@ messaging.requestPermission()
 messaging.onMessage(function(payload) {
   console.log('onMessage ' + payload);
 })
-
-function createNewHuddle(huddleName, dateCreated, creator, longitude, latitude, users){
-
-}
-
-function joinHuddle(huddleId){
-
-}
-
-function getAllMessagesForHuddle(huddleId){
-
-}
-
-function getAllNearbyHuddles(longitude, latitude){
-
-}
 
 
 // var obj = {
@@ -78,26 +61,44 @@ function writeNewMessage(huddleName, uid, body) {
   return firebase.database().ref().update(updates);
 }
 
-function getAllMsgs() {
+function getHuddleMsgs(huddleName) {
   return new Promise(function(resolve, reject) {
-    database.ref('huddles/test_huddle/messages').on("value", function(snapshot) {
+    database.ref('huddles/' + huddleName + '/messages').on("value", function(snapshot) {
       if (snapshot) {
-        resolve(snapshot.val())
+        var msg = {}
+        msg[huddleName] = snapshot.val()
+        resolve(msg)
       }
       else
-        reject('No snapshot found')
+        reject('No huddle messages snapshot found')
     })
+  })
+}
+
+function getAllHuddleMsgs(huddleList) {
+  console.log("Found huddleList: " + huddleList)
+  var getMsgPromises = []
+  huddleList.forEach(function(huddleName) {
+    getMsgPromises.push(getHuddleMsgs(huddleName))
+  })
+
+  return new Promise(function(fulfill, reject) {
+    // Wait until msgs for all huddles are loaded
+    Promise.all(getMsgPromises)
+      .then(function(msgs) {
+        var msgList = {}
+        // Concat all msg hashes to msgList
+        msgs.forEach(function(msg) {
+          Object.assign(msgList, msg)
+        })
+        return fulfill(msgList)
+      })
+      .catch(function(err) {
+        return reject('Somthing happend in getAllHuddleMsgs: ' + err)
+      })
   })
 }
 
 function getTime() {
   return Math.round(new Date().getTime() / 1000)
 }
-
-getAllMsgs().then(function(msgs) {
-  console.log(msgs)
-  Object.keys(msgs).forEach(function(key) {
-    console.log(key)
-  })
-})
-writeNewMessage('test_huddle', uid, "AYOOO")

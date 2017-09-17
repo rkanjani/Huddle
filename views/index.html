@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" />
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script src="scripts/init.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/msg.js"></script>
+    <script src="scripts/huddle.js"></script>
+    <script src="scripts/main.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -13,24 +19,6 @@
     <script src="semantic/dist/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/auth.js"></script>
-    <script src="scripts/msg.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyB1Fvs-hHHZtN3JVU3iG7lL9JaU5vR180o",
-        authDomain: "huddle-685b2.firebaseapp.com",
-        databaseURL: "https://huddle-685b2.firebaseio.com",
-        projectId: "huddle-685b2",
-        storageBucket: "huddle-685b2.appspot.com",
-        messagingSenderId: "66066916355"
-      };
-      firebase.initializeApp(config);
-      var database = firebase.database();
-
-      console.log(firebase.app().name);  // "[DEFAULT]"
-    </script>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-messaging.js"></script>
     <link rel="manifest" href="manifest.json">
   </head>
