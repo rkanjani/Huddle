@@ -145,8 +145,8 @@ a {
 
 .led-green {
   margin: 0 auto;
-  width: 24px;
-  height: 24px;
+  width: 15px;
+  height: 15px;
   background-color: #aeff70;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 1px 12px; }
@@ -161,6 +161,24 @@ a {
   line-height: 50px;
   width: 100%;
   font-size: 1.3rem; }
+
+.item:hover {
+  cursor: pointer; }
+
+.plus.square.outline.icon:hover {
+  cursor: pointer; }
+
+.huddle-name-input {
+  width: 95%;
+  position: absolute;
+  bottom: 0;
+  margin-left: 7px; }
+
+.editing {
+  border: 1px #0084ff solid !important; }
+
+.clicked {
+  color: #0084ff; }
 
 .ui.grid > .row > .column.messages-log {
   padding-left: 0 !important; }

@@ -30,84 +30,38 @@
           <div class="row chat-log-header">
             <i class="settings icon"></i>
             <p class="chat-log-header-paragraph"><span>huddle.<span></p>
-            <i class="plus square outline icon"></i>
+            <i ng-click="isCreatingHuddle = !isCreatingHuddle" ng-class="{clicked: isCreatingHuddle}" class="plus square outline icon"></i>
           </div>
 
           <div class="row chat-log-content">
 
             <div class="ui relaxed items">
-              <div class="item huddle">
+
+              <div ng-repeat="huddle in nearbyHuddles" class="item huddle" ng-click="viewHuddleChat(huddle.id)">
                 <div class="ui tiny image">
                   <div class="led-green"></div>
                 </div>
                 <div class="middle aligned content">
-                  <a class="header">Cosmopolitan Park</a>
+                  <a class="header">{{huddle.name}}</a>
                   <div class="huddle-context">
                     <span>
                       <p>
-                        <span class="numUsers"><i class="user icon"></i> 12</span>
-                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
+                        <span class="numUsers"><i class="user icon"></i> {{huddle.numOfUsers}}</span>
+                        <span class="creationDate"><i class="calendar outline icon"></i>{{huddle.dateCreated | date:'MMM d'}}</span>
                       </p>
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div class="item huddle">
-                <div class="ui tiny image">
-                  <div class="led-green"></div>
-                </div>
-                <div class="middle aligned content">
-                  <a class="header">Cosmopolitan Park</a>
-                  <div class="huddle-context">
-                    <span>
-                      <p>
-                        <span class="numUsers"><i class="user icon"></i> 12</span>
-                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
-                      </p>
-                    </span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="item huddle">
-                <div class="ui tiny image">
-                  <div class="led-green"></div>
-                </div>
-                <div class="middle aligned content">
-                  <a class="header">Cosmopolitan Park</a>
-                  <div class="huddle-context">
-                    <span>
-                      <p>
-                        <span class="numUsers"><i class="user icon"></i> 12</span>
-                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
-                      </p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item huddle">
-                <div class="ui tiny image">
-                  <div class="led-green"></div>
-                </div>
-                <div class="middle aligned content">
-                  <a class="header">Cosmopolitan Park</a>
-                  <div class="huddle-context">
-                    <span>
-                      <p>
-                        <span class="numUsers"><i class="user icon"></i> 12</span>
-                        <span class="creationDate"><i class="calendar outline icon"></i> Mar 25</span>
-                      </p>
-                    </span>
-                  </div>
-                </div>
+              <div ng-show="isCreatingHuddle" class="huddle-name-input ui input">
+                <input type="text" ng-class="{editing: isCreatingHuddle}" ng-model="newHuddleName" placeholder="Enter huddle name..." ng-keypress="($event.charCode==13)?saveHuddle():return">
               </div>
             </div>
-
-
-
           </div>
+
+
         </div>
 
 
