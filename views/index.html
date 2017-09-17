@@ -131,61 +131,18 @@
 
               <!-- Example message in chat  -->
               <!-- TODO: Make dynamic according to firebase  -->
-                <div class="comment">
+
+                <div ng-repeat="message in messages" ng-class="{me: message.sender == username, comment: true}" >
                   <div class="comment-content">
-                    <!-- <div class="avatar">
-                      <span class="message-color"></span>
-                    </div> -->
                     <div class="content">
-                      <div class="info">
-                        <a class="author">Matt</a>
+                      <div ng-if="(message.sender != messages[$index - 1].sender)" class="info">
+                        <a class="author">{{message.sender}}</a>
                         <div class="metadata">
-                          <span class="date">Today at 5:42PM</span>
+                          <span class="date">{{message.dateSent | date:'shortTime'}}</span>
                         </div>
                       </div>
                       <div class="text">
-                        Hello world!
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--END OF MESSAGE  -->
-
-                <div class="comment me">
-                  <div class="comment-content">
-                    <!-- <div class="avatar">
-                      <span class="message-color"></span>
-                    </div> -->
-                    <div class="content">
-                      <div class="info">
-                        <div class="metadata">
-                          <span class="date">Today at 5:42PM</span>
-                        </div>
-                        <a class="author">Rohan</a>
-                      </div>
-                      <div class="text">
-                        Why hello there!
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-
-                <div class="comment">
-                  <div class="comment-content">
-                    <!-- <div class="avatar">
-                      <span class="message-color"></span>
-                    </div> -->
-                    <div class="content">
-                      <div class="info">
-                        <a class="author">Matt</a>
-                        <div class="metadata">
-                          <span class="date">Today at 5:42PM</span>
-                        </div>
-                      </div>
-                      <div class="text">
-                        Wow this is actually working, great!
+                        {{message.content}}
                       </div>
                     </div>
                   </div>
@@ -194,9 +151,9 @@
           </div>
 
           <div class="row huddle-message ui input">
-            <input type="text" placeholder="Write message to huddle...">
+            <input type="text" placeholder="Write message to huddle..." ng-keypress="($event.charCode==13)?sendMessage():return" ng-model="currentMessage">
 
-            <button class="ui button send"><span><i class="send outline icon"></i></span></button>
+            <button ng-click="sendMessage()" class="ui button send"><span><i class="send outline icon"></i></span></button>
           </div>
 
         </div>
