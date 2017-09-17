@@ -3,6 +3,7 @@ var huddleApp = angular.module('huddleApp', []);
 huddleApp.controller('mainController', function mainController($scope) {
 
   $scope.currentMessage = '';
+  $scope.isCreatingHuddle = false;
   $scope.username = "rkanjani";
   $scope.nearbyHuddles = [
     {
@@ -11,6 +12,7 @@ huddleApp.controller('mainController', function mainController($scope) {
       numOfUsers: 30
     }
   ];
+
   $scope.messages = [
       {sender: "Matt",
       dateSent: "Mar 23",
@@ -44,9 +46,17 @@ huddleApp.controller('mainController', function mainController($scope) {
     writeNewMessage("test_huddle", 101, message.content)
   }
 
-  $scope.checkIfEnterPressed = function(keyEvent){
-    if (keyEvent.which === 13)
-      alert("fuck ya")
+  $scope.saveHuddle = function(){
+    var obj = {
+      name: $scope.newHuddleName,
+      dateCreated: +new Date(),
+      numOfUsers: 1
+    }
+
+    $scope.nearbyHuddles.push(obj);
+    $scope.newHuddleName = '';
+    $scope.isCreatingHuddle = false;
+    //Create new huddle and send to server
   }
 
   $scope.getLocation().then(function(location){
