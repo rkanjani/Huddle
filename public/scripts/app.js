@@ -4,6 +4,18 @@ huddleApp.controller('mainController', function mainController($scope) {
 
   $scope.currentMessage = '';
   $scope.username = "rkanjani";
+  $scope.nearbyHuddles = [
+    {
+      name:"Caledon Park",
+      dateCreated: +new Date(),
+      numOfUsers: 30
+    }
+  ];
+  $scope.messages = [
+      {sender: "Matt",
+      dateSent: "Mar 23",
+      content: "Hey guys, anyone down to get some coffee today?"}
+  ];
 
   $scope.getLocation = function(){
     return new Promise(function(resolve, reject){
@@ -29,6 +41,7 @@ huddleApp.controller('mainController', function mainController($scope) {
 
     $scope.messages.push(message);
     $scope.currentMessage = "";
+    writeNewMessage("test_huddle", 101, message.content)
   }
 
   $scope.checkIfEnterPressed = function(keyEvent){
@@ -53,10 +66,6 @@ huddleApp.controller('mainController', function mainController($scope) {
     alert("Please enable your location services on your browser");
   });
 
-  $scope.messages = [
-      {sender: "Matt",
-      dateSent: "Mar 23",
-      content: "Hey guys, anyone down to get some coffee today?"}
-  ];
+
 
 });

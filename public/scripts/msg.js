@@ -32,6 +32,33 @@ messaging.onMessage(function(payload) {
   console.log('onMessage ' + payload);
 })
 
+function createNewHuddle(huddleName, dateCreated, creator, longitude, latitude, users){
+
+}
+
+function joinHuddle(huddleId){
+
+}
+
+function getAllMessagesForHuddle(huddleId){
+
+}
+
+function getAllNearbyHuddles(longitude, latitude){
+
+}
+
+
+// var obj = {
+//   sender: "",
+//   dateSent: new Date(),
+//   content: ""
+// }
+//
+// huddle = {
+//   huddleName, dateCreated, creator, longitude, latitude, users
+// }
+
 function writeNewMessage(huddleName, uid, body) {
   // A post entry.
   var huddleMsgRef = '/huddles/'+ huddleName + '/messages/'
@@ -74,4 +101,3 @@ getAllMsgs().then(function(msgs) {
   })
 })
 writeNewMessage('test_huddle', uid, "AYOOO")
-
