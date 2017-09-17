@@ -1,6 +1,8 @@
 {
-  "short_name": "AirHorner",
-  "name": "Kinlan's AirHorner of Infamy",
+  "short_name": "Huddle",
+  "name": "Chat with stranger based on your location",
+  "background_color": "#0084ff",
+  "display": "standalone",
   "icons": [
     {
       "src": "launcher-icon-1x.png",
